@@ -14,7 +14,7 @@ class TestEmotionDetection(unittest.TestCase):
         self.assertEqual(result3['dominant_emotion'], 'disgust')
 
         result4 = json.loads(emotion_detector('I am so sad about this'))
-        
+        self.assertEqual(result4['dominant_emotion'], 'sadness')
 
         result5 = json.loads(emotion_detector('I am really afraid that this will happen'))
         self.assertEqual(result5['dominant_emotion'], 'fear')
