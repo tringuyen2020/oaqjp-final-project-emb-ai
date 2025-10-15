@@ -20,5 +20,14 @@ def emotion_detector(text_to_analyze):
                 'dominant_emotion': dominant_emotion
                 }
         return json.dumps(result)
+    elif response.status_code == 400:
+        result = {'anger': None,
+                'disgust': None,
+                'fear': None,
+                'joy': None,
+                'sadness': None,
+                'dominant_emotion': None
+                }
+        return json.dumps(result)
     else:
         return {"error": "Failed to get response from emotion detection service"}
